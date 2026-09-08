@@ -8,20 +8,21 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static assets from "public"
+// Serve static assets from root and public
+app.use(express.static(path.join(__dirname)));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Clean HTML routes matching the 3 mockup views
+// HTML routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/rute-harga', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'rute-harga.html'));
+  res.sendFile(path.join(__dirname, 'rute-harga.html'));
 });
 
 app.get('/kontak', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'kontak.html'));
+  res.sendFile(path.join(__dirname, 'kontak.html'));
 });
 
 // API helper for quick booking verification

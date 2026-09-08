@@ -1,0 +1,1731 @@
+/* ===================================================
+   KOPSI TRAVEL - OFFICIAL STYLESHEET
+   Sama persis dengan 3 referensi desain
+   Dark Obsidian & Crimson Red Theme
+   =================================================== */
+
+:root {
+  --bg-main: #070b13;
+  --bg-surface: #0c1424;
+  --bg-card: #0f192d;
+  --bg-card-hover: #132039;
+  --bg-glass: rgba(12, 20, 36, 0.85);
+  --bg-input: #0a1120;
+  
+  --border-subtle: #1a273e;
+  --border-card: #20314f;
+  --border-hover: #2e456e;
+  
+  --primary-red: #ef3842;
+  --primary-red-hover: #dc2626;
+  --primary-red-glow: rgba(239, 56, 66, 0.35);
+  --primary-red-soft: rgba(239, 56, 66, 0.12);
+
+  --accent-green: #22c55e;
+  --accent-green-soft: rgba(34, 197, 94, 0.12);
+  --accent-blue: #38bdf8;
+  --accent-blue-soft: rgba(56, 189, 248, 0.12);
+
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+  
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(239, 56, 66, 0.25);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-red);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.section-title span.text-red {
+  color: var(--primary-red);
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Badge Styles */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+}
+
+.badge-pill.badge-red {
+  background: var(--primary-red-soft);
+  border-color: rgba(239, 56, 66, 0.4);
+  color: #ff6b74;
+}
+
+.badge-pill.badge-green {
+  background: var(--accent-green-soft);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+}
+
+.badge-pill.badge-blue {
+  background: var(--accent-blue-soft);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+}
+
+.dot-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-red);
+  box-shadow: 0 0 8px var(--primary-red);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f03e48 0%, #d82330 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(239, 56, 66, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff525c 0%, #ea2e3c 100%);
+  box-shadow: 0 6px 24px rgba(239, 56, 66, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ===================================================
+   NAVIGATION BAR
+   =================================================== */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(7, 11, 19, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-icon-wrap {
+  width: 38px;
+  height: 38px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.brand-name span.brand-red {
+  color: var(--primary-red);
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(15, 25, 45, 0.9);
+  border: 1px solid var(--border-card);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+}
+
+.nav-item {
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background: #192742;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active-red {
+  background: linear-gradient(135deg, #f03e48 0%, #d82330 100%);
+  color: #ffffff;
+  border: 1px solid rgba(239, 56, 66, 0.4);
+  box-shadow: 0 2px 10px rgba(239, 56, 66, 0.35);
+}
+
+.nav-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ===================================================
+   HERO SECTION (BERANDA)
+   =================================================== */
+.hero-section {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 25, 45, 0.8);
+  border: 1px solid var(--border-card);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-brand-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.hero-brand-title span.text-red {
+  color: var(--primary-red);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.hero-desc {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto 24px;
+}
+
+.hero-pill-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 25, 45, 0.6);
+  border: 1px solid var(--border-card);
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.hero-visual-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+  margin-bottom: 28px;
+  background: #090e1a;
+}
+
+.hero-visual-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 11, 19, 0.1) 0%, rgba(7, 11, 19, 0.6) 80%, rgba(7, 11, 19, 0.95) 100%);
+  pointer-events: none;
+}
+
+.hero-info-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 22, 40, 0.9);
+  border: 1px solid var(--border-card);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.info-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.info-bar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--primary-red-soft);
+  border: 1px solid rgba(239, 56, 66, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+}
+
+.info-bar-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.info-bar-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.info-bar-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  background: var(--accent-green-soft);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* ===================================================
+   SECTION: RUTE PERJALANAN (BERANDA)
+   =================================================== */
+.route-grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.route-priority-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.route-badge-row {
+  margin-bottom: 20px;
+}
+
+.route-card-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.route-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.route-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.route-stat-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 16px 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.route-stat-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.route-stat-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.route-timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.timeline-header-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.timeline-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 32px;
+  bottom: -14px;
+  width: 2px;
+  background: var(--border-card);
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #141f35;
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline-step-item.active .step-number {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--primary-red);
+}
+
+.step-info-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.step-info-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ===================================================
+   SECTION: HARGA PERJALANAN (BERANDA & RUTE-HARGA)
+   =================================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.pricing-card.featured {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 28px rgba(239, 56, 66, 0.22);
+}
+
+.popular-badge-tab {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-red);
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricing-card-header {
+  margin-bottom: 20px;
+}
+
+.pricing-card-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pricing-card-route {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.pricing-card-summary {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pricing-rate-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 22px;
+}
+
+.rate-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.rate-amount {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.rate-unit {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.pricing-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+}
+
+.feature-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-green);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ===================================================
+   SECTION: ARMADA (BERANDA)
+   =================================================== */
+.armada-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.armada-features-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.armada-feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: var(--transition);
+}
+
+.armada-feature-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.armada-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+  margin-bottom: 14px;
+}
+
+.armada-feature-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.armada-feature-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.armada-visual-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.armada-main-photo {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  height: 280px;
+}
+
+.armada-main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.armada-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 11, 19, 0.9) 100%);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.armada-thumbs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.armada-thumb-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  height: 140px;
+}
+
+.armada-thumb-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.armada-thumb-label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(7, 11, 19, 0.75);
+  padding: 2px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* ===================================================
+   SECTION: TITIPAN PAKET (BERANDA & RUTE-HARGA)
+   =================================================== */
+.packet-banner-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+}
+
+.packet-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.packet-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.packet-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.packet-title span.text-red {
+  color: var(--primary-red);
+}
+
+.packet-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.packet-features-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.packet-feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+}
+
+.packet-feature-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.packet-right-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+}
+
+.packet-right-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.packet-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-red-soft);
+  border: 1px solid rgba(239, 56, 66, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+}
+
+.packet-right-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.packet-right-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.packet-stat-bar {
+  background: #090e1a;
+  border: 1px solid var(--border-subtle);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.packet-stat-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.packet-stat-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Pre-Footer Banner */
+.pre-footer-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.banner-left-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.banner-left-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ===================================================
+   FOOTER (SHARED ACROSS ALL 3 PAGES)
+   =================================================== */
+.footer-wrapper {
+  background: #05080e;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 60px;
+  padding-bottom: 28px;
+  margin-top: 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.footer-col-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.footer-brand-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link-item a {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-link-item a:hover {
+  color: var(--primary-red);
+  transform: translateX(3px);
+}
+
+.footer-contact-item {
+  margin-bottom: 14px;
+}
+
+.contact-item-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.contact-item-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+}
+
+/* ===================================================
+   HALAMAN 2: RUTE & HARGA (rute-harga.html)
+   =================================================== */
+.rute-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  border-color: var(--border-hover);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #f03e48 0%, #d82330 100%);
+  border-color: var(--primary-red);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(239, 56, 66, 0.35);
+}
+
+/* Route Flow Sequence (8 Nodes) */
+.route-flow-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  margin-top: 30px;
+}
+
+.flow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.flow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.flow-node-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.flow-node-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-2px);
+}
+
+.node-number {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #152238;
+  border: 1px solid var(--border-card);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.flow-node-card.start-node .node-number,
+.flow-node-card.end-node .node-number {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+.node-city {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.node-desc {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.protocol-banner {
+  background: #090e1a;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.protocol-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.protocol-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--primary-red-soft);
+  color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.protocol-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.protocol-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cargo & Logistics Section on Rute-Harga */
+.cargo-rates-table {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cargo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #090e1a;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+}
+
+.cargo-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cargo-price {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary-red);
+}
+
+.charter-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+
+/* ===================================================
+   HALAMAN 3: KONTAK & PEMESANAN (kontak.html)
+   =================================================== */
+.contact-offices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.office-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.office-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.office-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.office-region-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.office-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.office-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.office-hotline-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.hotline-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.hotline-number-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.hotline-number-link:hover {
+  color: var(--primary-red);
+}
+
+.office-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.office-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* Booking Form Section */
+.booking-section-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  margin-bottom: 60px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 36px;
+}
+
+.booking-left-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking-interior-preview {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  height: 260px;
+  margin: 20px 0;
+}
+
+.booking-interior-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(7, 11, 19, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-card);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.preview-route-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(7, 11, 19, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Form Styles */
+.form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.form-header-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.form-header-sub {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.form-control {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  color: #ffffff;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(239, 56, 66, 0.15);
+}
+
+select.form-control option {
+  background: #0d1527;
+  color: #ffffff;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-disclaimer {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* Map Frame Section */
+.map-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.map-visual-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 320px;
+}
+
+.map-svg-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.map-overlay-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(7, 11, 19, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+/* CTA Card: Siap Berangkat */
+.ready-cta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 56px 40px;
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.ready-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary-red-soft);
+  border: 1px solid rgba(239, 56, 66, 0.3);
+  color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.ready-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.ready-sub {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
+
+.ready-route-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #090e1a;
+  border: 1px solid var(--border-subtle);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+}
+
+.ready-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ready-quote {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES
+   =================================================== */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .flow-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .route-grid-layout,
+  .armada-grid-layout,
+  .packet-grid,
+  .contact-offices-grid,
+  .booking-grid,
+  .map-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 12px;
+  }
+
+  .nav-links-pill {
+    display: flex;
+    padding: 3px;
+  }
+
+  .nav-item {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  .hero-brand-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-info-bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .flow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .pre-footer-banner,
+  .charter-banner,
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
