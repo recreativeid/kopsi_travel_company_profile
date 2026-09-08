@@ -1,0 +1,23 @@
+{
+  "name": "kopsi-travel-company-profile",
+  "version": "1.0.0",
+  "description": "Website Resmi Company Profile KOPSI Travel - Perjalanan Eksekutif Bukittinggi, Pekanbaru, Duri, Dumai",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "kopsi",
+    "kopsi-travel",
+    "travel-bukittinggi",
+    "travel-pekanbaru",
+    "travel-dumai",
+    "company-profile"
+  ],
+  "author": "KOPSI Travel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
