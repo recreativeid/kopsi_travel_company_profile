@@ -1681,27 +1681,18 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    gap: 12px;
+  }
+
   .nav-links-pill {
-    display: none;
-  }
-  
-  .mobile-toggle {
-    display: block;
-  }
-
-  .mobile-nav-drawer {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    background: var(--bg-surface);
-    padding: 16px;
-    border-radius: var(--radius-md);
-    margin-top: 12px;
-    border: 1px solid var(--border-card);
-  }
-
-  .mobile-nav-drawer.open {
     display: flex;
+    padding: 3px;
+  }
+
+  .nav-item {
+    padding: 6px 12px;
+    font-size: 0.78rem;
   }
 
   .hero-brand-title {

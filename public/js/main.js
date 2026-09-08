@@ -4,15 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Menu Toggle
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileDrawer = document.getElementById('mobileNavDrawer');
-
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-    });
-  }
 
   // 2. Rute & Harga Filter Tabs (rute-harga.html)
   const filterBtns = document.querySelectorAll('.filter-btn');
