@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Tentukan nomor WhatsApp target berdasarkan kantor perwakilan
-      let targetPhone = '6282278350002'; // Default: Bukittinggi
+      let targetPhone = '6282174495681'; // Default: Bukittinggi
       let namaPerwakilan = 'Kantor Perwakilan Bukittinggi (Pool Utama)';
 
       if (perwakilan === 'pekanbaru') {

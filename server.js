@@ -37,7 +37,7 @@ app.post('/api/booking', (req, res) => {
   }
 
   // Pilih nomor WhatsApp tujuan berdasarkan kantor perwakilan
-  const phoneTarget = perwakilan === 'pekanbaru' ? '6281274495681' : '6282278350002';
+  const phoneTarget = perwakilan === 'pekanbaru' ? '6281274495681' : '6282174495681';
   
   const textMessage = `*Halo Admin KOPSI Travel, Saya ingin memesan:*\n\n` +
     `• *Nama*: ${nama}\n` +
